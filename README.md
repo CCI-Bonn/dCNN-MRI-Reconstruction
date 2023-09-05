@@ -22,6 +22,7 @@ The architecture of our network is shown below
   <img src="img/Architecture_2.png" width="1000px" alt=""> 
 </p>
 
+## Execution
 
 1. Install the anaconda environment using environment.yml file in the repository.
 2. Download the network weights using the link https://heibox.uni-heidelberg.de/f/d8f1dc4c3ae5412a97b9/?dl=1  and extract the weights.
@@ -35,3 +36,4 @@ The architecture of our network is shown below
     csv_path ='CT1_2D_CSV_PATH.csv'  # Path to CSV file containing full path of the original file (e.g the entry to CSV file should be like "/home/mydata/patient1/01062023/CT1.nii.gz)
     R = 2 # Undersampling rate
     ~~~
+## Demo
