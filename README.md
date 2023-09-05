@@ -26,7 +26,7 @@ The architecture of the network used in this study is shown below
 
 1. Install the anaconda environment using environment.yml file in the repository.
 2. Download the network weights using the link https://heibox.uni-heidelberg.de/f/d8f1dc4c3ae5412a97b9/?dl=1  and extract the weights.
-3. The folder "Test/2D" contains all the test files for 2D reconstruction and folder "Test/3D" contains all the files for 3D reconstruction.
+3. The folder "Test/2D" contains all the test files for 2D reconstruction and folder "Test/3D" contains all the files for 3D reconstruction from single coil simulated data from nifti files.
 4. To reconstruct from undersampled MR data run the file run_SEQ_test.py  where SEQ = {CT1_2D,T1_2D,FLAIR,T2} for 2D sequences and SEQ = {CT1_3D,T1_3D} for 3D sequences.
 5. In the file edit the following fields as per your configuration:
     ~~~
@@ -37,3 +37,7 @@ The architecture of the network used in this study is shown below
     R = 2 # Undersampling rate
     ~~~
 ## Demo
+
+1. Download the sample case using the link https://heibox.uni-heidelberg.de/f/d8f1dc4c3ae5412a97b9/?dl=1 . This dataset corresponds to the representative case in Figure 2 of the main manuscript.
+2. Copy the case in "Demo_Data" folder.
+3. Run tstDemo.py file 
