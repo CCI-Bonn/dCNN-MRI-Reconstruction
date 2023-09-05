@@ -3,8 +3,8 @@ import subprocess as sp
 from datetime import datetime
 
 gpu_id = '2'
-model_dir='/Test/Weights/3D/'
-dir_recon = '/Test/2D'
+model_dir='../../Weights/3D/'
+dir_recon = '/'
 csv_path ='CT1_3D_CSV_PATH.csv'
 R = 2
 
