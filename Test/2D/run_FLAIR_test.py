@@ -9,8 +9,8 @@ import subprocess as sp
 from datetime import datetime
 
 gpu_id = '2'
-model_dir='/Test/Weights/2D/'
-dir_recon = '/Test/2D/'
+model_dir='../../Weights/2D/'
+dir_recon = '/'
 csv_path ='FLAIR_2D_CSV_PATH.csv'
 R = 2
 
