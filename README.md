@@ -40,4 +40,6 @@ The architecture of the network used in this study is shown below
 
 1. Download the sample case using the link https://heibox.uni-heidelberg.de/f/d8f1dc4c3ae5412a97b9/?dl=1 . This dataset corresponds to the representative case in Figure 2 of the main manuscript.
 2. Copy the case in "Demo_Data" folder.
-3. Run tstDemo.py file 
+3. Run tstDemo.py file
+4. The reconstructed nifti files will be saved in a folder "Demo_Data/311_502/20140903/recon/" for different undersampling rates.
+5. The image will be saved as demo_reconstruction.png in the main folder.
