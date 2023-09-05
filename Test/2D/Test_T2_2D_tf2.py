@@ -2,7 +2,6 @@
 #%%
 import os,time,io
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
 import sys
 import numpy as np
 import logging
@@ -39,7 +38,7 @@ config.allow_soft_placement=True
 parser = argparse.ArgumentParser()
 parser = argparse.ArgumentParser()
 parser.add_argument('--K', type=int, default = 1)
-parser.add_argument('--n_gpu', type=int,  default = 2)
+parser.add_argument('--n_gpu', type=int,  default = 0)
 parser.add_argument('--R', type=int,  default = 4)
 parser.add_argument('--epoch', type=int,  default = 100)
 parser.add_argument('--load', type=str,default = '26Sep_1023am_5L_1K_200E_AG')
@@ -49,6 +48,8 @@ parser.add_argument('--model_dir', type=str,default = '/raid/Aditya/Recon/Tumor/
 parser.add_argument('--dir_recon', type=str,default = '/raid/Aditya/Recon/Tumor/Recon/modl2D/')
 
 args = parser.parse_args()
+gpu_id = str(args.n_gpu)
+os.environ["CUDA_VISIBLE_DEVICES"]=gpu_id
 
 csv_path = args.csv_path
 
