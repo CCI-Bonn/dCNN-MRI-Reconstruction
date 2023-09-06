@@ -40,8 +40,8 @@ The architecture of the network used in this study is shown below
     ~~~
 ## Demo
 To test the reconstruction algorithm for different undersampling rates and sequences, we are attaching a sample case (same as shown in Figure 2 of main manuscript).
-1. Download the sample case using the link [HERE](https://heibox.uni-heidelberg.de/d/09063141363a4a0b84f5/) . This dataset corresponds to the representative case in Figure 2 of the main manuscript.
-2. Copy the case in "Demo_Data" folder.
+1. Download the sample case using the link [HERE](https://heibox.uni-heidelberg.de/f/b615c0390e0745988b36/?dl=1). This dataset corresponds to the representative case in Figure 2 of the main manuscript.
+2. Unzip the file and copy the case in "Demo_Data" folder. The path to data should look like "Demo_Data/311_502/20140903".
 3. Run tstDemo.ipynb file (instructions to run file are provided inside the jupyter notebook). The script calculated the kspace data using fourier transform and retrospectively undersamples the kspace data which is then used for reconstruction.
 4. The nifti files estimated from undersampled data using zero filling and reconstructed nifti files using dCNN will be saved in a folder "Demo_Data/311_502/20140903/recon/" for different undersampling rates.
 5. The image will be saved as Figure_Demo_300dpi.png in the main folder.
