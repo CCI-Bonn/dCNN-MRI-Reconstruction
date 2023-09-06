@@ -1,10 +1,4 @@
-"""
-Created on Aug 6th, 2018
 
-This file contains some supporting functions used during training and testing.
-
-@author:Hemant
-"""
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import time
