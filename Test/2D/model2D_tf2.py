@@ -1,11 +1,4 @@
 """
-This code will create the model described in our following paper
-MoDL: Model-Based Deep Learning Architecture for Inverse Problems
-by H.K. Aggarwal, M.P. Mani, M. Jacob from University of Iowa.
-
-Paper dwonload  Link:     https://arxiv.org/abs/1712.02862
-
-@author: haggarwal
 """
 import os
 # os.environ["CUDA_VISIBLE_DEVICES"]="3"
