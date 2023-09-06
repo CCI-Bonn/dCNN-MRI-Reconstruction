@@ -7,7 +7,7 @@ Code for MR Image reconstruction using physics-based neural network.
 This code solves the following optimization problem:
 
 <p align="center">
-  <img src="https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B200%7D%20%5Csmall%20J%28x%29%20%3D%20%5Cunderset%7Bx%7D%7B%5Ctext%7Bargmin%7D%7D%20%5C%20%5C%20%7C%7CAx-b%7C%7C_2%5E2%20&plus;%20%5Calpha%7C%7Cx-D_w%28x%29%7C%7C%5E2_2" width="300px" alt=""> 
+  <img src="https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B200%7D%20%5Csmall%20J%28x%29%20%3D%20%5Cunderset%7Bx%7D%7B%5Ctext%7Bargmin%7D%7D%20%5C%20%5C%20%7C%7CAx-b%7C%7C_2%5E2%20&plus;%20%5Calpha%7C%7Cx-D_w%28x%29%7C%7C%5E2_2" width="200px" alt=""> 
 </p>
  
  `A` can be any measurement operator. Here we consider parallel imaging problem in MRI where
