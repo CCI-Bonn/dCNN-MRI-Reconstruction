@@ -21,7 +21,7 @@ This code solves the following optimization problem:
 
 The architecture of the network used in this study is shown below
 <p align="center">
-  <img src="img/Architecture_2.png" width="1000px" alt=""> 
+  <img src="img/Architecture_2.png" width="800px" alt=""> 
 </p>
 
 ## Execution
