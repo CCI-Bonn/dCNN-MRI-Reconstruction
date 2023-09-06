@@ -5,12 +5,13 @@ Code for MR Image reconstruction using physics-based neural network.
 
 
 This code solves the following optimization problem:
-  $$J(x) = \underset{x}{\operatorname{\argmin}} ||Ax-b||_2^2 + \alpha||x-\mathcal(D)_w(x)||^2_2$$
 
- `A` can be any measurement operator. Here we consider parallel imaging problem in MRI where
- the `A` operator consists of undersampling mask, FFT, and coil sensitivity maps.
+  $$J(x) = \underset{x}{\text{argmin}} \ \ ||Ax-b||_2^2 + \alpha||x-\mathcal{D}_w(x)||^2_2$$
 
-`Dw(x)`: it represents the denoiser using a residual learning CNN.
+ $A$ can be any measurement operator. Here we consider parallel imaging problem in MRI where
+ the $A$ operator consists of undersampling mask, FFT, and coil sensitivity maps.
+
+$\mathcal{D}_w(x)$: it represents the denoiser using a residual learning CNN.
 
 
 
