@@ -8,9 +8,14 @@ Paper dwonload  Link:     https://arxiv.org/abs/1712.02862
 @author: haggarwal
 """
 import os
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning) 
 # os.environ["CUDA_VISIBLE_DEVICES"]="3"
 import tensorflow as tf
+tf.get_logger().setLevel('ERROR')
+
 import tensorflow.compat.v1 as tfv
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 from tensorflow.python.util import deprecation
 deprecation._PRINT_DEPRECATION_WARNINGS = False
 import supportingFunctions_T1_new_tf2 as sf
