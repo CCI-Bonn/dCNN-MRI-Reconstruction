@@ -31,7 +31,15 @@ The architecture of the network used in this study is shown below
 3. **Improved Prior Learning**: The Data denoising block, which learns a denoising prior for MR reconstruction should only generate a noise prior from the input (output of data consistency layer at each iteration of dCNN). However, there is no guarantee for the Data denoising block to learn the noise prior instead of any other feature, which was observed during the experiments performed for this manuscript at higher undersampling rates.An explicit loss term was added between ground truth and the output of data denoising block to ensure that it learns a noise prior.
 4. **Multi-gpu training**: Additionally, the implementation of existing MoDL was modified to support multi-gpu training by splitting the minibatch across multiple GPUs. This was necessary for 3D volume reconstruction.
 
-Therefore the modified model is more stable, easier to train and can offer better convergence and hence performance.
+Therefore the modified model is more stable, easier to train and can offer better convergence and performance.
+
+## Installation
+
+The algorithm is developed and tested on the Linux platform, execution on any other OS cannot be guaranteed. The dCNN algorithm uses TensorFlow 2.xx for execution. To install all libraries needed to execute dCNN for MRI reconstruction follow these steps:
+1. Download the dCNN-MRI-Reconstruction repository from Github and extract the files.
+2. Launch a terminal and change the path to the folder extracted in step 1.
+3. Install the necessary libraries using the following command:
+       conda env create -n ENVNAME --file ENV.yml
 ## Execution
 
 1. Install the anaconda environment using environment.yml file in the repository.
