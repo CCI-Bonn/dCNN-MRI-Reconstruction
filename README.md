@@ -38,8 +38,38 @@ Therefore the modified model is more stable, easier to train and can offer bette
 The algorithm is developed and tested on the Linux platform, execution on any other OS cannot be guaranteed. The dCNN algorithm uses TensorFlow 2.xx for execution. To install all libraries needed to execute dCNN for MRI reconstruction follow these steps:
 1. Download the dCNN-MRI-Reconstruction repository from Github and extract the files.
 2. Launch a terminal and change the path to the folder extracted in step 1.
-3. Install the necessary libraries using the following command:
-       conda env create -n ENVNAME --file ENV.yml
+3. Execution of this code requires Miniconda. To install Miniconda on a Linux system, follow these steps (if already installed skip to step 4):
+   
+   * **Download Miniconda**: Open a terminal and navigate to the directory where you want to download the Miniconda installer. Then, use curl or wget to download the Miniconda installer script. Replace <MINICONDA_VERSION> with the desired version, e.g., "latest" for the most recent version.
+
+          wget https://repo.anaconda.com/miniconda/Miniconda3-<MINICONDA_VERSION>-Linux-x86_64.sh
+     
+   * **Run the Installer Script**: After downloading, you'll need to make the installer script executable and then run it. Use the following commands, replacing <MINICONDA_VERSION> with the actual version you downloaded:
+
+         chmod +x Miniconda3-<MINICONDA_VERSION>-Linux-x86_64.sh
+         ./Miniconda3-<MINICONDA_VERSION>-Linux-x86_64.sh
+     
+      This will start the installation process. You'll be asked to review the license agreement (press Enter to scroll through), and then you'll need to accept the license terms by typing "yes."
+
+   * **Choose Installation Location**: The installer will ask where to install Miniconda. The default location is usually your home directory. You can press Enter to accept the default or specify a different location if needed.
+
+   * **Initialize Miniconda**: After installation, you may need to initialize Miniconda in your terminal. Run the following command:
+
+          source ~/.bashrc
+    
+      This will update your shell environment to include Miniconda.
+
+   * **Verify Installation**:  To confirm that Miniconda is installed, run the following command:
+
+          conda --version
+    
+      This should display the version of Conda, indicating that the installation was successful.
+    
+4. Install the necessary libraries using the following command:
+   
+       conda env create -n ENVNAME --file environment.yml
+
+ Where "ENVNAME" is the name for the environment of your choice.
 ## Execution
 
 1. Install the anaconda environment using environment.yml file in the repository.
