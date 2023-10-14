@@ -24,6 +24,14 @@ The architecture of the network used in this study is shown below
   <img src="img/Architecture_2.png" width="800px" alt=""> 
 </p>
 
+## Improvements over MoDL
+
+1. Unlike existing MoDL, the network used in this study is capable of reconstructing 3D acquired sequences using a 3D undersampling mask. This also makes the prior more informative as the field of view for prior calculation increases.
+2. The network used in this study is more stable than MoDL to changes while training. In classical MoDL the lagrangian parameter can fluctuate between positive and negative values which can blow up the loss values. This problem is addressed in the current networks. For solving any constraint optimization problem $\alpha$ has to be non-negative (strictly positive in our case). In the original implementation of MoDL there was no mechanism to restrict $\alpha$ to be positive and in our initial experiments, it was observed that $\alpha$ oscillates between positive and negative values during parameter updation. This leads to the divergence of neural network during training. The implementation was modified such that $\alpha$ remains positive.
+3. The Data denoising block, which learns a denoising prior for MR reconstruction should only generate a noise prior from the input (output of data consistency layer at each iteration of dCNN). However, there is no guarantee for the Data denoising block to learn the noise prior instead of any other feature, which was observed during the experiments performed for this manuscript at higher undersampling rates.An explicit loss term was added between ground truth and the output of data denoising block to ensure that it learns a noise prior.
+4. Additionally, the implementation of existing MoDL was modified to support multi-gpu training by splitting the minibatch across multiple GPUs. This was necessary for 3D volume reconstruction.
+
+Therefore the modified model is more stable, easier to train and can offer better convergence - hence performance - which are substantial improvements over the original work.
 ## Execution
 
 1. Install the anaconda environment using environment.yml file in the repository.
