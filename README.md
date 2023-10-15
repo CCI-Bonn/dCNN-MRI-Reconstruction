@@ -74,26 +74,53 @@ The algorithm is developed and tested on the Linux platform, execution on any ot
 **The readers can now directly skip to the Demo section if they just want to test the code or if interested in executing the code on their own dataset, follow the next two sections**
 
 ## Data Preparation
+  Follow these steps for data preparation:
+  1. Rename the file and folders to follow a standard naming convention
+         - UNIQUES_FOLDER_NAME
+         -- T1.nii.gz (for 3D T1w, in case of 2D T1w either T1.nii.gz or T1_2D.nii.gz)
+         -- CT1.nii.gz (for 3D cT1w, in case of 2D cT1w either CT1.nii.gz or CT1_2D.nii.gz)
+         -- T2.nii.gz (for T2w, 2D only)
+         -- FLAIR.nii.gz (for FLAIR, 2D only)
+   2. Create a CSV file for each sequence containing the full paths to the test cases of that particular sequence: E.g
+         - MAIN_FOLDER/PATIENT_A/UNIQUES_FOLDER_NAME_1/T1.nii.gz
+         - MAIN_FOLDER/PATIENT_A/UNIQUES_FOLDER_NAME_2/T1.nii.gz
+         - MAIN_FOLDER/PATIENT_B/UNIQUES_FOLDER_NAME_1/T1.nii.gz
+         - MAIN_FOLDER/PATIENT_B/UNIQUES_FOLDER_NAME_2/T1.nii.gz
 
-
+        For references see dCNN-MRI-Reconstruction/Demo_Data/csv folder
+ 
 ## Execution
 
-1. Install the anaconda environment using environment.yml file in the repository.
-2. Download the network weights using the link https://heibox.uni-heidelberg.de/f/d8f1dc4c3ae5412a97b9/?dl=1  and extract the weights.
-3. The folder "Test/2D" contains all the test files for 2D reconstruction and folder "Test/3D" contains all the files for 3D reconstruction from single coil simulated data from nifti files.
-4. To reconstruct from undersampled MR data run the file run_SEQ_test.py  where SEQ = {CT1_2D,T1_2D,FLAIR,T2} for 2D sequences and SEQ = {CT1_3D,T1_3D} for 3D sequences.
-5. In the file edit the following fields as per your configuration:
+1. Download the network weights using the link https://heibox.uni-heidelberg.de/f/d8f1dc4c3ae5412a97b9/?dl=1  and extract the weights.
+2. The folder "Test/2D" contains all the test files for 2D reconstruction and the folder "Test/3D" contains all the files for 3D reconstruction from single coil simulated data from nifti files.
+3. Change directory using
+  
+       cd PATH_To_GITHUB_REPOSITORY/dCNN-MRI-Reconstruction/Test/
+   
+4. To reconstruct from undersampled MR data run the file run_SEQ_test.py  where SEQ = {CT1_2D,T1_2D,FLAIR,T2} for 2D sequences and SEQ = {CT1_3D,T1_3D} for 3D sequences. **Reconstruction of CT1_3D is shown for illustration (other sequences can be reconstructed similarly)**.
+5. Change the working  directory to 3D
+
+      cd 3D
+   
+6. Open **run_CT1_test.py** and edit the following fields as per your configuration:
     ~~~
     gpu_id = '2'   # GPU ID on which to run Reconstruction
-    model_dir='../../Weights/2D/'  # Path to weight file. For 2D sequences /PATH/Weights/2D and for 3D sequences /PATH/Weights/3D
+    model_dir='../../Weights/3D/'  # Path to weight file. For 2D sequences /PATH/Weights/2D and for 3D sequences /PATH/Weights/3D
     dir_recon = '/' # Path to tensorboard logdir for reconstruction visualization.
-    csv_path ='CT1_2D_CSV_PATH.csv'  # Path to CSV file containing full path of the original file (e.g the entry to CSV file should be like "/home/mydata/patient1/01062023/CT1.nii.gz)
+    csv_path ='PATH_TO_CSV_FILES/CT1_3D_CSV_FILENAME.csv'  # Path to CSV file containing the full path of the original file (e.g the entry to CSV file should be like "/home/mydata/patient1/01062023/CT1.nii.gz)
     R = 2 # Undersampling rate
     ~~~
+7. Save the changes to **run_CT1_test.py** and execute the code:
+
+         conda activate YOUR_ENV_NAME
+         python3 run_CT1_test.py
+   
+8. The code will save two files in the location of CT1.nii.gz file a) CT1_us.nii.gz:  MR scan estimated from undersampled data with zero-filling and b) CT1_recon.nii.gz: MR scan reconstructed from undersampled data using dCNN
 ## Demo
 To test the reconstruction algorithm for different undersampling rates and sequences, we are attaching a sample case (same as shown in Figure 2 of main manuscript).
-1. Download the sample case using the link [HERE](https://heibox.uni-heidelberg.de/f/b615c0390e0745988b36/?dl=1). This dataset corresponds to the representative case in Figure 2 of the main manuscript.
-2. Unzip the file and copy the case in "Demo_Data" folder. The path to data should look like "Demo_Data/311_502/20140903".
-3. Run tstDemo.ipynb file (instructions to run file are provided inside the jupyter notebook). The script calculated the kspace data using fourier transform and retrospectively undersamples the kspace data which is then used for reconstruction.
-4. The nifti files estimated from undersampled data using zero filling and reconstructed nifti files using dCNN will be saved in a folder "Demo_Data/311_502/20140903/recon/" for different undersampling rates.
-5. The image will be saved as Figure_Demo_300dpi.png in the main folder.
+1. Download the network weights using the link https://heibox.uni-heidelberg.de/f/d8f1dc4c3ae5412a97b9/?dl=1  and extract the weights.
+2. Download the sample case using the link [HERE](https://heibox.uni-heidelberg.de/f/b615c0390e0745988b36/?dl=1). This dataset corresponds to the representative case in Figure 2 of the main manuscript.
+3. Unzip the file and copy the case in "Demo_Data" folder. The path to data should look like "Demo_Data/311_502/20140903".
+4. Run tstDemo.ipynb file (instructions to run file are provided inside the jupyter notebook). The script calculated the kspace data using fourier transform and retrospectively undersamples the kspace data which is then used for reconstruction.
+5. The nifti files estimated from undersampled data using zero filling and reconstructed nifti files using dCNN will be saved in a folder "Demo_Data/311_502/20140903/recon/" for different undersampling rates.
+6. The image will be saved as Figure_Demo_300dpi.png in the main folder.
