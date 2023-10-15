@@ -25,9 +25,9 @@ This code solves the following optimization problem:
 MR exams from patients with glioblastoma treated at Heidelberg University Hospital (775 patients, 775 MRI -exams), within the phase-II CORE trial (260 patients, 1083 MRI exams-examinations, 59 institutions) and within the phase-III CENTRIC trial (504 patients, 3147 MRI- examinations, 149 institutions) were used to develop and train a dCNN for reconstructing MRI (pre- and postcontrast T1-w, T2-w and FLAIR sequences) from highly undersampled (retrospectively generated) single-coil k-space data with various acceleration rates (R=2-15). Specifically, the training data included:
 
 1. A single-institutional retrospective dataset with 694 MRI examinations from 495 patients was acquired at the Department of Neuroradiology, Heidelberg University Hospital, Germany. Specifically, the HD cohort consisted of MRI exams from a single time point (one MRI exam per patient) either pre-operatively from initial diagnosis (n=580 (75%)), early postoperatively (less than 72 hours after surgery; n=57 (7%)) or at disease recurrence (n=138 (18%)).
-2. The CORE <a href="#modl">[1]</a> and CENTRIC <a href="#modl">[2]</a> studies which were prospective multicenter randomized phase II and III trials in patients with newly diagnosed glioblastoma compared standard chemo-radiotherapy with/without anti-angiogenic treatment with cilengitide. Specifically, patients with O6-DNA methylguanine-methyltransferase (MGMT) unmethylated glioblastoma were included in the phase II CORE trial, whereas those with MGMT methylated glioblastoma were included in the phase III CENTRIC trial.
+2. The CORE[^1]</a> and CENTRIC[^2]/a> studies which were prospective multicenter randomized phase II and III trials in patients with newly diagnosed glioblastoma compared standard chemo-radiotherapy with/without anti-angiogenic treatment with cilengitide. Specifically, patients with O6-DNA methylguanine-methyltransferase (MGMT) unmethylated glioblastoma were included in the phase II CORE trial, whereas those with MGMT methylated glioblastoma were included in the phase III CENTRIC trial.
 
-**The testing** was performed on the EORTC-26101 dataset (528 patients with 1974 MRI exams from 32 institutions all containing pre- and postcontrast T1-w, T2-w and FLAIR sequences). The EORTC-26101 <a href="#modl">[3]</a><a href="#modl">[4]</a> dataset is a multicentric clinical trial dataset with 2034 MRI examinations from 532 patients acquired across 34 institutions in Europe
+**The testing** was performed on the EORTC-26101 dataset (528 patients with 1974 MRI exams from 32 institutions all containing pre- and postcontrast T1-w, T2-w and FLAIR sequences). The EORTC-26101[^3][^4] dataset is a multicentric clinical trial dataset with 2034 MRI examinations from 532 patients acquired across 34 institutions in Europe
 
 HD-GLIO is very fast on GPU with <10s run time per MRI examination.
 ## Architecture
@@ -40,7 +40,7 @@ The architecture of the network used in this study is shown below
 ## MoDL: Model Based Deep Learning Architecture for Inverse Problems
 
 **Reference Papaer**
-MoDL: Model Based Deep Learning Architecture for Inverse Problems by Hemant et al. <a href="#modl">[5]</a>.
+MoDL: Model Based Deep Learning Architecture for Inverse Problems by Hemant et al.[^5].
 
 The algorithm used in this work is inspired by MoDL which was proposed for 2D reconstruction of MR images from undersampled k-space data. The architecture of MoDL is shown in Figure above. MoDL estimates reconstructed MR scans from undersampled data by solving a convex constraint optimization problem as shown in Equation above. The first term of the equation is the Data Consistency term and enforces the physical model of MR undersampling and the second term is the denoising-based prior, `Dw(x)`. The relative strength of the Denoising Prior over Data Consistency term is controlled by lagrangian multiplier $\alpha$ where $\alpha$ should be > 0. The network is trained by unrolling for a fixed number of iterations $N$ and the Deoising Prior `Dw(x)` and $\alpha$ are trainable parameters which are learned using supervised loss and the parameters are shared across all iterations.
 
@@ -152,13 +152,13 @@ To test the reconstruction algorithm for different undersampling rates and seque
 
 ## References
 
-<b id="my_anchor">[1].</b>Nabors L Burt, Fink Karen L, Mikkelsen Tom, et al., Two cilengitide regimens in combination with standard treatment for patients with newly diagnosed glioblastoma and unmethylated MGMT gene promoter: results of the
+[^1] Nabors L Burt, Fink Karen L, Mikkelsen Tom, et al., Two cilengitide regimens in combination with standard treatment for patients with newly diagnosed glioblastoma and unmethylated MGMT gene promoter: results of the
 open-label, controlled, randomized phase II CORE study _ Neuro-oncology_. 2015;17:708–717.
 
-<b id="my_anchor">[2].</b>Stupp Roger, Hegi Monika E, Gorlia Thierry, et al., Cilengitide combined with standard treatment for patients with newly diagnosed glioblastoma with methylated MGMT promoter (CENTRIC EORTC 26071-22072 study): a multicentre, randomised, open-label, phase 3 trial _The lancet oncology_. 2014;15:1100–1108.
+[^2] Stupp Roger, Hegi Monika E, Gorlia Thierry, et al., Cilengitide combined with standard treatment for patients with newly diagnosed glioblastoma with methylated MGMT promoter (CENTRIC EORTC 26071-22072 study): a multicentre, randomised, open-label, phase 3 trial _The lancet oncology_. 2014;15:1100–1108.
 
-<b id="my_anchor">[3].</b>Wick Wolfgang, Gorlia Thierry, Bendszus Martin, et al., Lomustine and bevacizumab in progressive glioblastoma _New England Journal of Medicine_. 2017;377:1954–1963.
+[^3] Wick Wolfgang, Gorlia Thierry, Bendszus Martin, et al., Lomustine and bevacizumab in progressive glioblastoma _New England Journal of Medicine_. 2017;377:1954–1963.
 
-<b id="my_anchor">[4].</b>Wick Wolfgang, Stupp Roger, Gorlia Thierry, et al., Phase II part of EORTC study 26101: The sequence of bevacizumab and lomustine in patients with first recurrence of glioblastoma. 2016.
+[^4] Wick Wolfgang, Stupp Roger, Gorlia Thierry, et al., Phase II part of EORTC study 26101: The sequence of bevacizumab and lomustine in patients with first recurrence of glioblastoma. 2016.
 
-<b id="my_anchor">[5].</b> H.K. Aggarwal, M.P Mani, and Mathews Jacob, MoDL: Model Based Deep Learning Architecture for Inverse Problems _IEEE Transactions on Medical Imaging_,  2018 
+[^5] H.K. Aggarwal, M.P Mani, and Mathews Jacob, MoDL: Model Based Deep Learning Architecture for Inverse Problems _IEEE Transactions on Medical Imaging_,  2018 
