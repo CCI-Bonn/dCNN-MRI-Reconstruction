@@ -1,6 +1,6 @@
 **DISCLAIMER:** This repository is only intended for editors and reviewers of the manuscript "<ins>Deep-learning-based reconstruction of undersampled MRI for multi-fold reduction of scan time: a multicenter retrospective cohort study in neuro-oncology</ins>". Do not use this repository outside the review process or distribute it. The repository will be made publicly available upon acceptance of the manuscript via https://github.com/NeuroAI-HD/dCNN-MRI-Reconstruction
 
-The containerized version of this code will be released soon.
+The containerized version of this code will be released soon. Also, this repository is presently shared using Gitfront which doesn't support rendering latex mathematical symbols. This problem won't occur in the final repository shared using Github
 
 # dCNN-MRI-Reconstruction
 Code for MR Image reconstruction using physics-based neural network.
