@@ -150,7 +150,6 @@ To test the reconstruction algorithm for different undersampling rates and seque
 6. The image will be saved as Figure_Demo_300dpi.png in the main folder.
 
 
-## References
 
 [^1]: Nabors L Burt, Fink Karen L, Mikkelsen Tom, et al., Two cilengitide regimens in combination with standard treatment for patients with newly diagnosed glioblastoma and unmethylated MGMT gene promoter: results of the
 open-label, controlled, randomized phase II CORE study _ Neuro-oncology_. 2015;17:708–717.
