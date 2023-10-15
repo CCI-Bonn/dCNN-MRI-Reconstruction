@@ -27,7 +27,7 @@ MR exams from patients with glioblastoma treated at Heidelberg University Hospit
 1. A single-institutional retrospective dataset with 694 MRI examinations from 495 patients was acquired at the Department of Neuroradiology, Heidelberg University Hospital, Germany. Specifically, the HD cohort consisted of MRI exams from a single time point (one MRI exam per patient) either pre-operatively from initial diagnosis (n=580 (75%)), early postoperatively (less than 72 hours after surgery; n=57 (7%)) or at disease recurrence (n=138 (18%)).
 2. The CORE <a href="#modl">[1]</a> and CENTRIC <a href="#modl">[2]</a> studies which were prospective multicenter randomized phase II and III trials in patients with newly diagnosed glioblastoma compared standard chemo-radiotherapy with/without anti-angiogenic treatment with cilengitide. Specifically, patients with O6-DNA methylguanine-methyltransferase (MGMT) unmethylated glioblastoma were included in the phase II CORE trial, whereas those with MGMT methylated glioblastoma were included in the phase III CENTRIC trial.
 
-**The testing** was performed on the EORTC-26101 dataset (528 patients with 1974 MRI exams from 32 institutions all containing pre- and postcontrast T1-w, T2-w and FLAIR sequences). The EORTC-26101 <a href="#modl">[3]</a><a href="#modl">[6]</a> dataset is a multicentric clinical trial dataset with 2034 MRI examinations from 532 patients acquired across 34 institutions in Europe
+**The testing** was performed on the EORTC-26101 dataset (528 patients with 1974 MRI exams from 32 institutions all containing pre- and postcontrast T1-w, T2-w and FLAIR sequences). The EORTC-26101 <a href="#modl">[3]</a><a href="#modl">[4]</a> dataset is a multicentric clinical trial dataset with 2034 MRI examinations from 532 patients acquired across 34 institutions in Europe
 
 HD-GLIO is very fast on GPU with <10s run time per MRI examination.
 ## Architecture
@@ -154,7 +154,11 @@ To test the reconstruction algorithm for different undersampling rates and seque
 
 <b id="my_anchor">[1].</b>Nabors L Burt, Fink Karen L, Mikkelsen Tom, et al., Two cilengitide regimens in combination with standard treatment for patients with newly diagnosed glioblastoma and unmethylated MGMT gene promoter: results of the
 open-label, controlled, randomized phase II CORE study _ Neuro-oncology_. 2015;17:708–717.
+
 <b id="my_anchor">[2].</b>Stupp Roger, Hegi Monika E, Gorlia Thierry, et al., Cilengitide combined with standard treatment for patients with newly diagnosed glioblastoma with methylated MGMT promoter (CENTRIC EORTC 26071-22072 study): a multicentre, randomised, open-label, phase 3 trial _The lancet oncology_. 2014;15:1100–1108.
+
 <b id="my_anchor">[3].</b>Wick Wolfgang, Gorlia Thierry, Bendszus Martin, et al., Lomustine and bevacizumab in progressive glioblastoma _New England Journal of Medicine_. 2017;377:1954–1963.
+
 <b id="my_anchor">[4].</b>Wick Wolfgang, Stupp Roger, Gorlia Thierry, et al., Phase II part of EORTC study 26101: The sequence of bevacizumab and lomustine in patients with first recurrence of glioblastoma. 2016.
+
 <b id="my_anchor">[5].</b> H.K. Aggarwal, M.P Mani, and Mathews Jacob, MoDL: Model Based Deep Learning Architecture for Inverse Problems _IEEE Transactions on Medical Imaging_,  2018 
