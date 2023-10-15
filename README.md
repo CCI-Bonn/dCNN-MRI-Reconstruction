@@ -155,10 +155,10 @@ To test the reconstruction algorithm for different undersampling rates and seque
 [^1]: Nabors L Burt, Fink Karen L, Mikkelsen Tom, et al., Two cilengitide regimens in combination with standard treatment for patients with newly diagnosed glioblastoma and unmethylated MGMT gene promoter: results of the
 open-label, controlled, randomized phase II CORE study _ Neuro-oncology_. 2015;17:708–717.
 
-[^2] Stupp Roger, Hegi Monika E, Gorlia Thierry, et al., Cilengitide combined with standard treatment for patients with newly diagnosed glioblastoma with methylated MGMT promoter (CENTRIC EORTC 26071-22072 study): a multicentre, randomised, open-label, phase 3 trial _The lancet oncology_. 2014;15:1100–1108.
+[^2]: Stupp Roger, Hegi Monika E, Gorlia Thierry, et al., Cilengitide combined with standard treatment for patients with newly diagnosed glioblastoma with methylated MGMT promoter (CENTRIC EORTC 26071-22072 study): a multicentre, randomised, open-label, phase 3 trial _The lancet oncology_. 2014;15:1100–1108.
 
-[^3] Wick Wolfgang, Gorlia Thierry, Bendszus Martin, et al., Lomustine and bevacizumab in progressive glioblastoma _New England Journal of Medicine_. 2017;377:1954–1963.
+[^3]: Wick Wolfgang, Gorlia Thierry, Bendszus Martin, et al., Lomustine and bevacizumab in progressive glioblastoma _New England Journal of Medicine_. 2017;377:1954–1963.
 
-[^4] Wick Wolfgang, Stupp Roger, Gorlia Thierry, et al., Phase II part of EORTC study 26101: The sequence of bevacizumab and lomustine in patients with first recurrence of glioblastoma. 2016.
+[^4]: Wick Wolfgang, Stupp Roger, Gorlia Thierry, et al., Phase II part of EORTC study 26101: The sequence of bevacizumab and lomustine in patients with first recurrence of glioblastoma. 2016.
 
-[^5] H.K. Aggarwal, M.P Mani, and Mathews Jacob, MoDL: Model Based Deep Learning Architecture for Inverse Problems _IEEE Transactions on Medical Imaging_,  2018 
+[^5]: H.K. Aggarwal, M.P Mani, and Mathews Jacob, MoDL: Model Based Deep Learning Architecture for Inverse Problems _IEEE Transactions on Medical Imaging_,  2018 
