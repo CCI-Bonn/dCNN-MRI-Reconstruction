@@ -69,7 +69,13 @@ The algorithm is developed and tested on the Linux platform, execution on any ot
    
        conda env create -n ENVNAME --file environment.yml
 
- Where "ENVNAME" is the name for the environment of your choice.
+   Where "ENVNAME" is the name for the environment of your choice.
+
+**The readers can now directly skip to the Demo section if they just want to test the code or if interested in executing the code on their own dataset, follow the next two sections**
+
+## Data Preparation
+
+
 ## Execution
 
 1. Install the anaconda environment using environment.yml file in the repository.
