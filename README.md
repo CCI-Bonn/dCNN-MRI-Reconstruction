@@ -1,5 +1,7 @@
 **DISCLAIMER:** This repository is only intended for editors and reviewers of the manuscript "<ins>Deep-learning-based reconstruction of undersampled MRI for multi-fold reduction of scan time: a multicenter retrospective cohort study in neuro-oncology</ins>". Do not use this repository outside the review process or distribute it. The repository will be made publicly available upon acceptance of the manuscript via https://github.com/NeuroAI-HD/dCNN-MRI-Reconstruction
 
+The containerized version of this code will be released soon.
+
 # dCNN-MRI-Reconstruction
 Code for MR Image reconstruction using physics-based neural network.
 
@@ -23,6 +25,15 @@ The architecture of the network used in this study is shown below
 <p align="center">
   <img src="img/Architecture_2.png" width="800px" alt=""> 
 </p>
+
+## MoDL: Model Based Deep Learning Architecture for Inverse Problems
+
+**Reference Papaer**
+MoDL: Model Based Deep Learning Architecture for Inverse Problems by H.K. Aggarwal, M.P Mani, and Mathews Jacob in IEEE Transactions on Medical Imaging, 2018
+
+IEEE Xplore: https://ieeexplore.ieee.org/document/8434321/
+
+The algorithm used in this work is inspired by MoDL which was proposed for 2D reconstruction of MR images from undersampled k-space data. The architecture of MoDL is shown in Figure above. MoDL estimates reconstructed MR scans from undersampled data by solving a convex constraint optimization problem as shown in Equation above. The first term of the equation is the Data Consistency term and enforces the physical model of MR undersampling and the second term is the denoising-based prior, `Dw(x)`. The relative strength of the Denoising Prior over Data Consistency term is controlled by lagrangian multiplier `$\alpha$` where `$\alpha$` should be > 0. The network is trained by unrolling for a fixed number of iterations $N$ and the Deoising Prior `Dw(x)` and `$\alpha$` are trainable parameters which are learned using supervised loss and the parameters are shared across all iterations.
 
 ## Improvements over MoDL
 
