@@ -73,7 +73,7 @@ The algorithm is developed and tested on the Linux platform, execution on any ot
 
 5. Activate conda environment to cross-check is installation is complete:
 
-      conda activate ENVNAME
+         conda activate ENVNAME
 
 **The readers can now directly skip to the Demo section if they just want to test the code or if interested in executing the code on their own dataset, follow the next two sections**
 
