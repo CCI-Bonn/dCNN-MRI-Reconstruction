@@ -71,6 +71,10 @@ The algorithm is developed and tested on the Linux platform, execution on any ot
 
    Where "ENVNAME" is the name for the environment of your choice.
 
+5. Activate conda environment to cross-check is installation is complete:
+
+      conda activate ENVNAME
+
 **The readers can now directly skip to the Demo section if they just want to test the code or if interested in executing the code on their own dataset, follow the next two sections**
 
 ## Data Preparation
@@ -112,7 +116,7 @@ The algorithm is developed and tested on the Linux platform, execution on any ot
     ~~~
 7. Save the changes to **run_CT1_test.py** and execute the code:
 
-         conda activate YOUR_ENV_NAME
+         conda activate ENVNAME
          python3 run_CT1_test.py
    
 8. The code will save two files in the location of CT1.nii.gz file a) CT1_us.nii.gz:  MR scan estimated from undersampled data with zero-filling and b) CT1_recon.nii.gz: MR scan reconstructed from undersampled data using dCNN
