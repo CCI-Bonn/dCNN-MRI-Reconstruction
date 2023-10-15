@@ -20,7 +20,16 @@ This code solves the following optimization problem:
 `Dw(x)`: it represents the denoiser using a residual learning CNN.
 
 
+## Training Details
 
+MR exmas from patients with glioblastoma treated at Heidelberg University Hospital (775 patient, 775 MRI -exams), within the phase-II CORE trial (260 patients, 1083 MRI exams-examinations, 59 institutions) and within the phase-III CENTRIC trial (504 patients, 3147 MRI- examinations, 149 institutions) were used to develop and train a dCNN for reconstructing MRI (pre- and postcontrast T1-w, T2-w and FLAIR sequences) from highly undersampled (retrospectively generated) single-coil k-space data with various acceleration rates (R=2-15). Specifically, the training data included:
+
+1. A single-institutional retrospective dataset with 694 MRI examinations from 495 patients acquired at the Department of Neuroradiology, Heidelberg University Hospital, Germany. Specifically, the HD cohort consisted of MRI exams from a single time point (one MRI exam per patient) either pre-operatively from initial diagnosis (n=580 (75%)), early postoperatively (less than 72 hours after surgery; n=57 (7%)) or at disease recurrence (n=138 (18%)).
+2. The CORE and CENTRIC studies which were prospective multicenter randomized phase II and III trials in patients with newly diagnosed glioblastoma comparing standard chemo-radiotherapy with/without anti-angiogenic treatment with cilengitide. Specifically, patients with O6-DNA methylguanine-methyltransferase (MGMT) unmethylated glioblastoma were included in the phase II CORE trial, whereas those with MGMT methylated glioblastoma were included in the phase III CENTRIC trial.
+
+**The testing** was performed on the EORTC-26101 dataset (528 patients with 1974 MRI exams from 32 institutions all containing pre- and postcontrast T1-w, T2-w and FLAIR sequences). EORTC-26101 dataset is a multicentric clinical trial dataset with 2034 MRI examinations from 532 patients acquired across 34 institutions in Europe
+
+HD-GLIO is very fast on GPU with <10s run time per MRI examination.
 ## Architecture
 
 The architecture of the network used in this study is shown below
@@ -31,9 +40,7 @@ The architecture of the network used in this study is shown below
 ## MoDL: Model Based Deep Learning Architecture for Inverse Problems
 
 **Reference Papaer**
-MoDL: Model Based Deep Learning Architecture for Inverse Problems by H.K. Aggarwal, M.P Mani, and Mathews Jacob in IEEE Transactions on Medical Imaging, 2018
-
-IEEE Xplore: https://ieeexplore.ieee.org/document/8434321/
+MoDL: Model Based Deep Learning Architecture for Inverse Problems by Hemant et al. <a href="#modl">[1]</a>.
 
 The algorithm used in this work is inspired by MoDL which was proposed for 2D reconstruction of MR images from undersampled k-space data. The architecture of MoDL is shown in Figure above. MoDL estimates reconstructed MR scans from undersampled data by solving a convex constraint optimization problem as shown in Equation above. The first term of the equation is the Data Consistency term and enforces the physical model of MR undersampling and the second term is the denoising-based prior, `Dw(x)`. The relative strength of the Denoising Prior over Data Consistency term is controlled by lagrangian multiplier $\alpha$ where $\alpha$ should be > 0. The network is trained by unrolling for a fixed number of iterations $N$ and the Deoising Prior `Dw(x)` and $\alpha$ are trainable parameters which are learned using supervised loss and the parameters are shared across all iterations.
 
@@ -141,3 +148,8 @@ To test the reconstruction algorithm for different undersampling rates and seque
 4. Run tstDemo.ipynb file (instructions to run file are provided inside the jupyter notebook). The script calculated the kspace data using fourier transform and retrospectively undersamples the kspace data which is then used for reconstruction.
 5. The nifti files estimated from undersampled data using zero filling and reconstructed nifti files using dCNN will be saved in a folder "Demo_Data/311_502/20140903/recon/" for different undersampling rates.
 6. The image will be saved as Figure_Demo_300dpi.png in the main folder.
+
+
+## References
+
+<b id="my_anchor">[1].</b> MoDL: Model Based Deep Learning Architecture for Inverse Problems  by H.K. Aggarwal, M.P Mani, and Mathews Jacob in IEEE Transactions on Medical Imaging,  2018 
