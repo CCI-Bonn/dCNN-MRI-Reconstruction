@@ -91,7 +91,7 @@ The algorithm is developed and tested on the Linux platform, execution on any ot
          - MAIN_FOLDER/PATIENT_B/UNIQUES_FOLDER_NAME_1/T1.nii.gz
          - MAIN_FOLDER/PATIENT_B/UNIQUES_FOLDER_NAME_2/T1.nii.gz
 
-        For references see dCNN-MRI-Reconstruction/Demo_Data/csv folder
+        **For references see dCNN-MRI-Reconstruction/Demo_Data/csv folder**
  
 ## Execution
 
