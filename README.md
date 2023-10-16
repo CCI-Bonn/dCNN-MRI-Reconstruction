@@ -5,7 +5,6 @@ This repository is presently shared using a private Gitfront link which doesn't 
 # dCNN-MRI-Reconstruction
 Code for MR Image reconstruction using physics-based neural network.
 
-
 This code solves the following optimization problem:
 
 <p align="center">
@@ -16,6 +15,9 @@ This code solves the following optimization problem:
  the `A` operator consists of undersampling mask, FFT, and coil sensitivity maps.
 
 `Dw(x)`: it represents the denoiser using a residual learning CNN.
+
+If you are using the dCNN-MRI-Reconstruction algorithm please cite the following publication:
+* to be added after publiction of the manuscript
 
 
 ## Datasets
