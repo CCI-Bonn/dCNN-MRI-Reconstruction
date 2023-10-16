@@ -29,7 +29,7 @@ This code solves the following optimization problem:
 
 **The testing** was performed on the EORTC-26101 dataset (528 patients with 1974 MRI exams from 32 institutions all containing pre- and postcontrast T1-w, T2-w and FLAIR sequences). The EORTC-26101<sup>[3]</sup><sup>[4]</sup> dataset is a multicentric clinical trial dataset with 2034 MRI examinations from 532 patients acquired across 34 institutions in Europe
 
-The dCNN required 1.3 sec (95% CI: 1.2 sec, 1.4 sec) to reconstruct a 2D MRI and 3.3 sec (95% CI: 3.1 sec, 3.4 sec) to reconstruct a 3D MRI from undersampled k-space data (on a single A100-SXM4 GPU (40GB) on a NVIDIA DGX A100 with AMD EPYC 7742 64-Core Processor and 1 TB RAM.
+The dCNN required 1.3 sec (95% CI: 1.2 sec, 1.4 sec) to reconstruct a 2D MRI and 3.3 sec (95% CI: 3.1 sec, 3.4 sec) to reconstruct a 3D MRI from undersampled k-space data (on a single A100-SXM4 GPU (40GB) on a NVIDIA DGX A100 with AMD EPYC 7742 64-Core Processor and 1 TB RAM).
 ## Architecture
 
 The architecture of the network used in this study is shown below
