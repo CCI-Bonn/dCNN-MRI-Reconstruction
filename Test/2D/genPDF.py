@@ -1,18 +1,24 @@
 import numpy as np
 import matplotlib.pyplot as plt
+
+# Function to generate a probability density function (PDF)
+
 def genPDF(imSize,p,pctg,distType = 2,radius = 0,disp = 0):
     
     minval = 0
     maxval = 1
     val = 0.5
     imSize = np.asarray(imSize)
+    # Ensure imSize is an array of size 2
     if np.size(imSize) ==1:
         imSize = np.append(imSize, 1)
     
     sx = imSize[0]
     sy = imSize[1]
+    # Calculate the number of samples to maintain (PCTG)
     PCTG = np.floor(pctg*sx*sy)
 
+    # Create a grid for 2D or radial coordinates for 1D
     if (imSize==1).sum() == 0: # it is a 2D map
         x1 = np.linspace(-1,1,sx)
         y1 = np.linspace(-1,1,sy)
@@ -24,7 +30,6 @@ def genPDF(imSize,p,pctg,distType = 2,radius = 0,disp = 0):
             r = np.sqrt(x**2 + y**2)
             r = r/np.max(r)
     else:
-
         r = abs(np.linspace(-1,1,max(sx,sy)))
     idx = np.where(r < radius)
     pdf = (1-r)**p
@@ -47,7 +52,8 @@ def genPDF(imSize,p,pctg,distType = 2,radius = 0,disp = 0):
         elif N == PCTG:
             break
 
-    pdf = np.asarray(pdf)    
+    pdf = np.asarray(pdf) 
+    # Display the PDF if disp is true
     if disp:
         plot= lambda x: plt.imshow(x,cmap=plt.cm.gray, clim=(0.0, 1))
         plt.clf()
@@ -68,6 +74,8 @@ def genPDF(imSize,p,pctg,distType = 2,radius = 0,disp = 0):
 
     return pdf
 
+
+# Function to generate a sampling mask
 
 def genSampling(pdf,iter,tol):
     
