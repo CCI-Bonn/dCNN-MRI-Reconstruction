@@ -25,9 +25,10 @@ This code solves the following optimization problem:
 1. A single-institutional retrospective dataset with 694 MRI examinations from 495 patients was acquired at the Department of Neuroradiology, Heidelberg University Hospital, Germany. Specifically, the HD cohort consisted of MRI exams from a single time point (one MRI exam per patient) either pre-operatively from initial diagnosis (n=580 (75%)), early postoperatively (less than 72 hours after surgery; n=57 (7%)) or at disease recurrence (n=138 (18%)).
 2. The CORE<sup>[1]</sup> and CENTRIC<sup>[2]</sup> studies which were prospective multicenter randomized phase II and III trials in patients with newly diagnosed glioblastoma compared standard chemo-radiotherapy with/without anti-angiogenic treatment with cilengitide. Specifically, patients with O6-DNA methylguanine-methyltransferase (MGMT) unmethylated glioblastoma were included in the phase II CORE trial, whereas those with MGMT methylated glioblastoma were included in the phase III CENTRIC trial.
 
-**The testing** was performed on the EORTC-26101 dataset (528 patients with 1974 MRI exams from 32 institutions all containing pre- and postcontrast T1-w, T2-w and FLAIR sequences). The EORTC-26101<sup>[3]</sup><sup>[4]</sup> dataset is a multicentric clinical trial dataset with 2034 MRI examinations from 532 patients acquired across 34 institutions in Europe. [Add fastMRI testing as well...]
+**Testing**: MRI exams from patients with glioblsatoma in the EORTC-26101 phase II and III trial (528 patients with 1974 MRI exams from 32 institutions all containing pre- and postcontrast T1-w, T2-w and FLAIR sequences) and from subjects in the public fastMRI brain test dataset (xxx subjects with xxx exams from xx institutions) were used for testing. 
 
-The dCNN required 1.3 sec (95% CI: 1.2 sec, 1.4 sec) to reconstruct a 2D MRI and 3.3 sec (95% CI: 3.1 sec, 3.4 sec) to reconstruct a 3D MRI from undersampled k-space data (on a single A100-SXM4 GPU (40GB) on a NVIDIA DGX A100 with AMD EPYC 7742 64-Core Processor and 1 TB RAM).
+**Inference time**: The dCNN required 1.3 sec (95% CI: 1.2 sec, 1.4 sec) to reconstruct a 2D MRI and 3.3 sec (95% CI: 3.1 sec, 3.4 sec) to reconstruct a 3D MRI from undersampled k-space data (on a single A100-SXM4 GPU (40GB) on a NVIDIA DGX A100 with AMD EPYC 7742 64-Core Processor and 1 TB RAM).
+
 ## Architecture
 
 The architecture of the network used in this study is shown below
