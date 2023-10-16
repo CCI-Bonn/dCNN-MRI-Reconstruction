@@ -1,6 +1,6 @@
-**DISCLAIMER:** This repository is only intended for editors and reviewers of the manuscript "<ins>Deep-learning-based reconstruction of undersampled MRI for multi-fold reduction of scan time: a multicenter retrospective cohort study in neuro-oncology</ins>". Do not use this repository outside the review process or distribute it. The repository will be made publicly available upon acceptance of the manuscript via https://github.com/NeuroAI-HD/dCNN-MRI-Reconstruction
+**DISCLAIMER:** This repository is only intended for editors and reviewers of the manuscript "<ins>Deep-learning-based reconstruction of undersampled MRI for multi-fold reduction of scan time: a multicenter retrospective cohort study in neuro-oncology</ins>". Do not use this repository outside the review process or distribute it. 
 
-This repository is presently shared using Gitfront which doesn't support rendering latex mathematical symbols. This problem won't occur in the final repository shared using the public Github link (www.github.com/neuroAI-HD/dCNN-MRI-Reconstruction).
+This repository is presently shared using a private Gitfront link which doesn't support rendering latex mathematical symbols. This problem won't occur in the public version of the repository shared using Github (www.github.com/neuroAI-HD/dCNN-MRI-Reconstruction) upon acceptance of the manuscript.
 
 # dCNN-MRI-Reconstruction
 Code for MR Image reconstruction using physics-based neural network.
@@ -18,14 +18,14 @@ This code solves the following optimization problem:
 `Dw(x)`: it represents the denoiser using a residual learning CNN.
 
 
-## Training Data
+## Datasets
 
 **Training**: MR exams from patients with glioblastoma treated at Heidelberg University Hospital (775 patients, 775 MRI -exams), within the phase-II CORE trial (260 patients, 1083 MRI exams-examinations, 59 institutions) and within the phase-III CENTRIC trial (504 patients, 3147 MRI- examinations, 149 institutions) were used to develop and train a dCNN for reconstructing MRI (pre- and postcontrast T1-w, T2-w and FLAIR sequences) from highly undersampled (retrospectively generated) single-coil k-space data with various acceleration rates (R=2-15). Specifically, the training data included:
 
 1. A single-institutional retrospective dataset with 694 MRI examinations from 495 patients was acquired at the Department of Neuroradiology, Heidelberg University Hospital, Germany. Specifically, the HD cohort consisted of MRI exams from a single time point (one MRI exam per patient) either pre-operatively from initial diagnosis (n=580 (75%)), early postoperatively (less than 72 hours after surgery; n=57 (7%)) or at disease recurrence (n=138 (18%)).
 2. The CORE<sup>[1]</sup> and CENTRIC<sup>[2]</sup> studies which were prospective multicenter randomized phase II and III trials in patients with newly diagnosed glioblastoma compared standard chemo-radiotherapy with/without anti-angiogenic treatment with cilengitide. Specifically, patients with O6-DNA methylguanine-methyltransferase (MGMT) unmethylated glioblastoma were included in the phase II CORE trial, whereas those with MGMT methylated glioblastoma were included in the phase III CENTRIC trial.
 
-**The testing** was performed on the EORTC-26101 dataset (528 patients with 1974 MRI exams from 32 institutions all containing pre- and postcontrast T1-w, T2-w and FLAIR sequences). The EORTC-26101<sup>[3]</sup><sup>[4]</sup> dataset is a multicentric clinical trial dataset with 2034 MRI examinations from 532 patients acquired across 34 institutions in Europe
+**The testing** was performed on the EORTC-26101 dataset (528 patients with 1974 MRI exams from 32 institutions all containing pre- and postcontrast T1-w, T2-w and FLAIR sequences). The EORTC-26101<sup>[3]</sup><sup>[4]</sup> dataset is a multicentric clinical trial dataset with 2034 MRI examinations from 532 patients acquired across 34 institutions in Europe. [Add fastMRI testing as well...]
 
 The dCNN required 1.3 sec (95% CI: 1.2 sec, 1.4 sec) to reconstruct a 2D MRI and 3.3 sec (95% CI: 3.1 sec, 3.4 sec) to reconstruct a 3D MRI from undersampled k-space data (on a single A100-SXM4 GPU (40GB) on a NVIDIA DGX A100 with AMD EPYC 7742 64-Core Processor and 1 TB RAM).
 ## Architecture
