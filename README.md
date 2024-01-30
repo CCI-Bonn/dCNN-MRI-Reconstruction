@@ -1,7 +1,3 @@
-**DISCLAIMER:** This repository is only intended for editors and reviewers of the manuscript "<ins>Deep-learning-based reconstruction of undersampled MRI for multi-fold reduction of scan time: a multicenter retrospective cohort study in neuro-oncology</ins>". Do not use this repository outside the review process or distribute it. 
-
-This repository is presently shared using a private Gitfront link which doesn't support rendering latex mathematical symbols. This problem won't occur in the public version of the repository shared using Github (www.github.com/neuroAI-HD/dCNN-MRI-Reconstruction) upon acceptance of the manuscript.
-
 # dCNN-MRI-Reconstruction
 Code for MR Image reconstruction using physics-based neural network.
 
@@ -16,8 +12,9 @@ This code solves the following optimization problem:
 
 `Dw(x)`: it represents the denoiser using a residual learning CNN.
 
-If you are using the dCNN-MRI-Reconstruction algorithm please cite the following publication:
-* to be added after publiction of the manuscript
+**If you are using the dCNN-MRI-Reconstruction algorithm please cite the following publication:**
+
+**Rastogi A**, Brugnara G, Foltyn-Dumitru M, Mahmutoglu MA, Preetha CJ, Kobler E, Pflüger I, Schell M, Deike-hofmann K, Kessler T, van den Bent MJ, Ibdaih A, Platten M, Brandes AA, Nabors B, Stupp R, Bernhardt D, Debus J, Abdollahi A, Gorlia T, Tonn JC, Weller M, Maier-Hein KH, Radbruch A, Wick W, Bendszus M, Meredig H, Kurz FT, **Vollmuth P**. _Deep-learning-based reconstruction of undersampled MRI to reduce scan times: a multicentre, retrospective, cohort study._ **Lancet Oncol 2024** ([https://doi.org/10.1016/S1470-2045(23)00641-1])
 
 
 ## Datasets
